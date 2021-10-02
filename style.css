@@ -1,0 +1,14 @@
+tbody#myTable {
+  width: auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  background-color: black;
+  
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
