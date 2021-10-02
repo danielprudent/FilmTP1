@@ -1,0 +1,111 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Movies</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+  
+  .topnav {
+  background-color:black;
+  overflow: auto;
+  
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+body {
+  width: 100vw;
+  display: flex;
+  align-items: normal;
+  justify-content: center;
+  background-color: darkgray;
+  
+}
+
+
+
+footer{
+    background-color: black;
+}
+
+    img.posterUrl{
+       float: right !important;
+
+
+
+
+        width: 150px;
+
+    }
+
+  
+
+            
+   .table tbody+tbody {
+       align-items: center;
+       justify-content: center;
+   }    
+
+  
+
+ 
+  
+ 
+
+
+  
+</style>
+<header>
+  <ul class="topnav">
+    <li><a href="#">Films</a></li>
+    <li><a href="#">Accueil</a></li>
+    <li><button onclick="myFunction();" href="#">Lister</button></li>
+    <li><a href="#">Lister par categorie</a></li>
+    <label for="cars">Choose a car:</label>
+
+<select onchange="mySelect();" name="films" id="films">
+  
+</select>
+    
+  </ul>
+  
+</header>
+
+<table class="table">
+    
+    
+    
+    </div>
+    
+
+    <tbody id="myTable">
+
+
+
+
+
+      
+    </tbody>
+    <footer></footer>
+</table>
+
+<script src="js/films.js"></script>
