@@ -2165,7 +2165,7 @@ let listeCategories = [
 
 
 	buildTable(myArray.slice(0, 15))
-    chargerCategs()
+    addCategs()
 
     function searchTable(value, data){
         var filteredData = []
@@ -2230,8 +2230,8 @@ let listeCategories = [
                             <p><h6>Director:</h6> ${data[i].director}
                             <p><h6>Actors:</h6> ${data[i].actors}
                             <p><h6>Description:</h6> ${data[i].plot}<p>
-                            <a href="#" class="btn btn-primary">Add to cart<a/>
-                            <a href="#" class="btn btn-primary">Trailer<a/>
+                            <a href="#" class="btn btn-primary">Ajouter au panier<a/>
+                            <a href="#" class="btn btn-primary">Bande annonce<a/>
               </div>
 					  <div>`
 			table.innerHTML += row
@@ -2242,29 +2242,69 @@ let listeCategories = [
 	} 
   function myFunction()  
   {
-    alert("You button was pressed");
 
      buildTable(myArray)
-};   
+};
+/*  
 function mySelect ()
 {
     var categ = document.getElementById("films").value;
     buildTable(myArray)
 }
-function chargerCategs() {
-   // let listeCategories = [];
+*/
+
+function addCategs() {
+   
     let selCategs = document.getElementById("films");
-   // let taille = listeCategories.length;
-    //let uneCateg;
-   // for(let i=0; i<taille;i++){
-     //   tabC = listeCategories[i].categs;
-       // sansDoublons(tabCategs, tabC);
-    
-    //prendre les catégories qui sont dans tabCategs et lesmettre
-    //dans le « select » selCategs dumenu de navigation.
-
-    for(let uneCateg of listeCategories){
-        selCategs.options[selCategs.options.length] = new Option(uneCateg,uneCateg.substring(0,3));
+  
+    for(let i=0; i<selCategs;i++){
+        
+   
+  
     }
-
+    for(let uneCateg of listeCategories){
+        selCategs.options[selCategs.options.length] = new Option(uneCateg,uneCateg);
+    }
 }
+function chargerCategs() {
+    var selCategs = document.getElementById("films").value;
+    var selection = []
+
+    for(unFilm of myArray){
+         for(i=0;i<unFilm.genres.length;i++){
+         if(unFilm.genres[i]==selCategs){
+         selection.push(unFilm)
+         }
+         } 
+    }
+    alert(selCategs);
+    buildTable(selection)
+}
+/*
+
+function chargerFilmsDeCategorie(categ) 
+var strfilms=
+var cf = document. getElementById("CardGroup")
+for (unfilm of listeFilms){
+for (i-0;i<unfilm,genres length;i++)
+if (unfilm.genres[i] == categ)
+strfilms+=createcard(unfilm)
+}
+}
+cg-innerHiML-strfilms;
+}
+
+function chargerCategs() {
+   
+    let selCategs = document.getElementById("films");
+  
+    for(let i=0; i<selCategs;i++){
+        
+   
+  
+    }
+    for(let uneCateg of listeCategories){
+        selCategs.options[selCategs.options.length] = new Option(uneCateg,uneCateg.substring(0,5));
+    }
+}
+*/
