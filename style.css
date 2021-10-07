@@ -1,4 +1,4 @@
-tbody#myTable {
+tbody#myTable { 
   width: auto;
   display: flex;
   align-items: baseline;
@@ -66,3 +66,20 @@ tbody#myTable {
        align-items: center;
        justify-content: center;
    }  
+
+
+   #navbarNav.collapse.navbar-collapse {
+     justify-content: center;
+     background-color: #0d6efd;
+     color: white;
+
+   }
+
+   nav.navbar.navbar-expand-lg.navbar-dark.black {
+     background-color: #0d6efd;
+     color: white;
+     position: fixed;
+     width: -webkit-fill-available;
+     z-index: 1;
+     padding: 0px;
+   }
