@@ -1,5 +1,5 @@
 
-let listeCategories = [
+let listeCategories = [ // liste de tous les categorie 
     "Comedy",
     "Fantasy",
     "Crime",
@@ -23,7 +23,7 @@ let listeCategories = [
     "Sport"
 ];
 
-	var myArray = [
+	var myArray = [ // liste de tous les film pour file les cards
 
     {
         "id": 1,
@@ -2164,10 +2164,10 @@ let listeCategories = [
 
 
 
-	buildTable(myArray.slice(0, 15))
-    addCategs()
+	buildTable(myArray.slice(0, 15)) // slice pour que afficher les 15 premiers films
+    addCategs() // appel de la fonction addCategs
 
-    function searchTable(value, data){
+    function searchTable(value, data){ // filtrer une data 
         var filteredData = []
 
         for (var i = 0; i < data.length; i++){
@@ -2202,20 +2202,23 @@ let listeCategories = [
       }
 
      $(this).html(text)
-     buildTable(myArray)
+     buildTable(myArray) // buildTable pour mon html 
      })
 
-	function buildTable(data){
-		var table = document.getElementById('myTable')
+	function buildTable(data){ //fonction pour construire le tableau card
+		var table = document.getElementById('myTable') 
 
         table.innerHTML = ''
 
-		for (var i = 0; i < data.length; i++){
-            
+		for (var i = 0; i < data.length; i++){ // link mn js a mon style et add bootstrap
+          let visible = data[i].plot.substring(0,120);
+          if (data[i].plot.length>120){
+              visible+=" ... Plus";
+          }
           
            
-           var row = `
-            <link rel="stylesheet" href="css/style.css">
+           var row = ` 
+            <link rel="stylesheet" href="css/style.css"> 
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
                           
             
@@ -2229,7 +2232,7 @@ let listeCategories = [
                             <p><h6>Genres:</h6> ${data[i].genres}
                             <p><h6>Director:</h6> ${data[i].director}
                             <p><h6>Actors:</h6> ${data[i].actors}
-                            <p><h6>Description:</h6> ${data[i].plot}<p>
+                            <p><h6>Description:</h6> ${visible}<p>
                             <a href="#" class="btn btn-primary">Ajouter au panier<a/>
                             <a href="#" class="btn btn-primary">Bande annonce<a/>
               </div>
@@ -2237,23 +2240,15 @@ let listeCategories = [
 			table.innerHTML += row
 
 
-
 		}
 	} 
-  function myFunction()  
+  function myFunction()  // appel function buildTable pour mes card
   {
 
      buildTable(myArray)
 };
-/*  
-function mySelect ()
-{
-    var categ = document.getElementById("films").value;
-    buildTable(myArray)
-}
-*/
 
-function addCategs() {
+function addCategs() { // add la categorie selectionne
    
     let selCategs = document.getElementById("films");
   
@@ -2266,7 +2261,7 @@ function addCategs() {
         selCategs.options[selCategs.options.length] = new Option(uneCateg,uneCateg);
     }
 }
-function chargerCategs() {
+function chargerCategs() { // afficher les films par categorie selection pour l usager du site 
     var selCategs = document.getElementById("films").value;
     var selection = []
 
@@ -2277,34 +2272,6 @@ function chargerCategs() {
          }
          } 
     }
-    alert(selCategs);
-    buildTable(selection)
+    
+    buildTable(selection) // retourne le tableau avec les card des film selection/ dans la categ
 }
-/*
-
-function chargerFilmsDeCategorie(categ) 
-var strfilms=
-var cf = document. getElementById("CardGroup")
-for (unfilm of listeFilms){
-for (i-0;i<unfilm,genres length;i++)
-if (unfilm.genres[i] == categ)
-strfilms+=createcard(unfilm)
-}
-}
-cg-innerHiML-strfilms;
-}
-
-function chargerCategs() {
-   
-    let selCategs = document.getElementById("films");
-  
-    for(let i=0; i<selCategs;i++){
-        
-   
-  
-    }
-    for(let uneCateg of listeCategories){
-        selCategs.options[selCategs.options.length] = new Option(uneCateg,uneCateg.substring(0,5));
-    }
-}
-*/
